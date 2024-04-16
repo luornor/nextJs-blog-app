@@ -1,18 +1,19 @@
 import Link from 'next/link'
 import Meta from '../../../components/Meta'
 
-import linkstyles from '../../../styles/Link.module.css'
+import styles from '../../../styles/Link.module.css'
 
 const article = ({ article }) => {
   
   return (
     <>
-      <Meta title={article.title} description={article.excerpt} />
+      <Meta title={article.title} description={article.body} />
       <h1>{article.title}</h1>
       <p>{article.body}</p>
       <br />
-      <Link className={linkstyles.back_link}  href='/'>Go Back</Link>
-      <Link href="/edit/id" as={`edit/${article.id}`}>Edit article</Link>
+      <Link className={styles.back}  href='/'>Go Back</Link>
+      <Link className={styles.back}
+       href="/edit/id" as={`edit/${article.id}`}>Edit article</Link>
     </>
   )
 }

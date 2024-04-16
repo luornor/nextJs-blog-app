@@ -10,7 +10,8 @@ export default function CreatePostForm() {
     event.preventDefault();
     setIsSubmitting(true);
     let date = new Date().toUTCString()
-    let data = await PostData({ title, body, date });
+
+    let data = await PostData({title, body, date });
     console.log(data)
     setTitle('');
     setBody('');

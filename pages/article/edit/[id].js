@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState,useEffect} from 'react';
 import styles from '../../../styles/Edit.module.css'
+import { copyFileSync } from 'fs';
 
 export default function EditPostPage () {
   const [title, setTitle] = useState('');
@@ -38,7 +39,7 @@ export default function EditPostPage () {
     setBody("");
     setIsSubmitting(false);
     console.log(updatedData);
-    
+
     router.push('/');
   };
    
@@ -104,3 +105,6 @@ async function editPost(id, article) {
     return null;
   }
 }
+
+const date = new Date().toUTCString()
+console.log(date)
